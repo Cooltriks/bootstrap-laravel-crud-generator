@@ -1,0 +1,1 @@
+# bootstrap-laravel-crud-generator
