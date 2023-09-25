@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
  *
  * @author  Awais <asargodha@gmail.com>
  */
-class CoolhaxCrudGenerator extends GeneratorCommand
+class CoolhaxCrudGenerator extends CoolhaxGeneratorCommand
 {
     /**
      * The name and signature of the console command.
