@@ -1,0 +1,7 @@
+        <div class="col-md-6">
+            <label for="{{column}}">{{title}}</label>
+            <input class="form-control @error('{{column}}') is-invalid @enderror" placeholder="{{title}}" name="{{column}}" type="text" value="{{ old('{{column}}',@${{modelNameLowerCase}}->{{column}}) }}" id="{{column}}">
+            @error('{{column}}')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>

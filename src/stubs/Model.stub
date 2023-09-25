@@ -1,0 +1,31 @@
+<?php
+
+namespace {{modelNamespace}};
+
+use Illuminate\Database\Eloquent\Model;
+{{softDeletesNamespace}}
+
+/**
+ * Class {{modelName}}
+ {{properties}}
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
+class {{modelName}} extends Model
+{
+    {{softDeletes}}
+    
+    // Validation rules for this model
+    static $rules = [{{rules}}];
+    
+    // Number of items to be shown per page
+    protected $perPage = 20;
+
+    // Attributes that should be mass-assignable
+    protected $fillable = [{{fillable}}];
+    
+    // Attributes that are searchable
+    static $searchable = [{{fillable}}];
+    
+    {{relations}}
+}
