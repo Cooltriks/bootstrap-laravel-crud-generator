@@ -1,5 +1,5 @@
 {
-    "name": "Cooltriks/bootstrap-laravel-crud-generator",
+    "name": "cooltriks/bootstrap-laravel-crud-generator",
     "description": "Laravel Crud Generator based on https://github.com/takielias/coolhax-crud-generator",
     "license": "MIT",
     "authors": [
