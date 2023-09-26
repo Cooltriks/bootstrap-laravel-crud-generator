@@ -341,6 +341,9 @@ abstract class CoolhaxGeneratorCommand extends Command
      */
     protected function getBody($column)
     {
+        if ($this->hasRelationship($column)) {
+            $column = $this->hasRelationship($column)."->name";
+        } 
         $replace = array_merge($this->buildReplacements(), [
             '{{column}}' => $column,
         ]);

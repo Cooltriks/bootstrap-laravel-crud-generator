@@ -132,8 +132,7 @@ class CoolhaxCrudGenerator extends CoolhaxGeneratorCommand
         $form = "\n";
 
         foreach ($this->getFilteredColumns() as $column) {
-            $title = Str::title(str_replace('_', ' ', $column));
-
+            $title = Str::title(str_replace('_', ' ', str_replace('_id', ' ', $column)));
             $tableHead .= $this->getHead($title);
             $tableBody .= $this->getBody($column);
             $viewRows .= $this->getField($title, $column, 'view-field');

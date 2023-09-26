@@ -8,7 +8,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="/{{modelRoute}}">{{modelTitle}}</a></li>
+                        <li class="breadcrumb-item"><a href="/{{modelRoute}}">{{modelNamePluralUpperCase}}</a></li>
                         <li class="breadcrumb-item active" aria-current="edit">Edit {{modelTitle}}</li>
                     </ol>
                 </nav>
