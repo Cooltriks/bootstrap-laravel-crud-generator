@@ -57,7 +57,7 @@ class CoolhaxCrudGenerator extends CoolhaxGeneratorCommand
             ->buildViews();
 
         $this->info('Created Successfully.');
-
+        $this->generateRoutes();
         return true;
     }
 
@@ -158,6 +158,25 @@ class CoolhaxCrudGenerator extends CoolhaxGeneratorCommand
         }
 
         return $this;
+    }
+
+    protected function generateRoutes()
+    {
+        $route =$this->options['route'] ?? Str::kebab(Str::plural($this->name));
+        $routePath = base_path('routes/web.php');
+        $routeContent = File::get($routePath);
+
+        // Define the route string to check and add
+        $routeString = "Route::resource('" . strtolower($route) . "', '" . $this->name . "Controller');";
+
+        // Check if the route string already exists in web.php
+        if (strpos($routeContent, $routeString) === false) {
+            // If not, append the route string to the file
+            File::append($routePath, "\n" . $routeString);
+            $this->info('Route added successfully.');
+        } else {
+            $this->info('Route already exists.');
+        }
     }
 
     /**
