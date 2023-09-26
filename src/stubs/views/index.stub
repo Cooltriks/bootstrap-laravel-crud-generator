@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <button type="submit" class="btn btn-primary btn-sm">Search</button>
-                                        <a href="{{ route('{{modelRoute}}.index') }}"><button type="submit" class="btn btn-secondary btn-sm">Search</button></a>
+                                        <a href="{{ route('{{modelRoute}}.index') }}"><button type="button" class="btn btn-secondary btn-sm">Search</button></a>
                                     </div>
                                 </form>
                                 
