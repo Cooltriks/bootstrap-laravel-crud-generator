@@ -115,8 +115,7 @@ class {{modelName}}Controller extends Controller
     {
         request()->validate({{modelName}}::$rules);
         ${{modelNameLowerCase}}->update($request->all());
-        return redirect()->route('{{modelRoute}}.index')
-            .with('success', '{{modelName}} updated successfully');
+        return redirect()->route('{{modelRoute}}.index')->with('success', '{{modelName}} updated successfully');
     }
 
     /**
@@ -130,8 +129,7 @@ class {{modelName}}Controller extends Controller
     public function destroy($id)
     {
         {{modelName}}::find($id)->delete();
-        return redirect()->route('{{modelRoute}}.index')
-            .with('success', '{{modelName}} deleted successfully');
+        return redirect()->route('{{modelRoute}}.index')->with('success', '{{modelName}} deleted successfully');
     }
 
     /**
