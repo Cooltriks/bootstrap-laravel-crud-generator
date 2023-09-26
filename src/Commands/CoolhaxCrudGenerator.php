@@ -3,7 +3,7 @@
 namespace Coolhax\CoolhaxCrudGenerator\Commands;
 
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\File;
 /**
  * Class CoolhaxCrudGenerator.
  *
