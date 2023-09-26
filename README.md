@@ -26,6 +26,19 @@ This Laravel Generator package provides and generate Controller, Model (with elo
     PHP >= 8.1
     Bootstrap >= 5.0.0
 
+## Start Up
+```
+composer create-project laravel/laravel project-name
+```
+```
+cd project-name
+```
+```
+composer require laravel/ui
+```
+```
+php artisan bootstrap ui --auth
+```
 ## Installation
 1 - Install
 ```
