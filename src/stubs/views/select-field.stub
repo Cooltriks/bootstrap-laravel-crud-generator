@@ -1,7 +1,7 @@
     <div class="col-md-6">
         <label for="{{column}}">{{selectTitle}}</label>
         
-        <select class="form-control @error('{{column}}') is-invalid @enderror" name="{{column}}" id="{{column}}">
+        <select class="form-select @error('{{column}}') is-invalid @enderror" name="{{column}}" id="{{column}}">
             <option value="">Select {{selectTitle}}</option>
             @foreach(${{relationName}} as $relatedItem)
                 <option value="{{ $relatedItem->id }}" {{ old('{{column}}', @${{modelNameLowerCase}}->{{column}}) == $relatedItem->id ? 'selected' : '' }}>
