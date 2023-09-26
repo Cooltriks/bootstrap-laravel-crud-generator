@@ -8,18 +8,27 @@
 
 This Laravel Generator package provides and generate Controller, Model (with eloquent relations) and Views in **Bootstrap** for your development of your applications with single command.
 
+**What Is New**
+- **Relationship** with select in form and auto Relationship data pass in view 
+- **Select dropDown in form**
+- **Search Filter added**
+- **$serchable Property in Model**
+- Bootstrap new Design **col-md-6**
+
+
 - Will create **Model** with Eloquent relations
 - Will create **Controller** with all resources
 - Will create **views** in Bootstrap
 
 ## Requirements
-    Laravel >= 5.5
-    PHP >= 7.1
+    Laravel >= 9.0
+    PHP >= 8.1
+    Bootstrap >= 5.0.0
 
 ## Installation
 1 - Install
 ```
-composer require Cooltriks/bootstrap-laravel-crud-generator --dev
+composer require coolhax/bootstrap-laravel-crud-generator --dev
 ```
 2- Publish the default package's config
 ```
@@ -65,8 +74,5 @@ php artisan make:crud {table_name} --route={route_name}
 
 ## Author
 
-M Awais // [Email Me](mailto:asargodha@gmail.com)
+Rohit Kumar // [Email Me](mailto:coolelearning.php@gmail.com)
 
-[Buy me a Coffee](https://ko-fi.com/C0C8VT1M)
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C0C8VT1M)

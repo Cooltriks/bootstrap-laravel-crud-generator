@@ -285,7 +285,7 @@ abstract class CoolhaxGeneratorCommand extends Command
     protected function getField($title, $column, $type = 'form-field')
     {
         
-        $relationName = Str::before('country_id', '_id');
+        $relationName = Str::before($column, '_id');
         $relationNameTitle = ucfirst($relationName);
         $replace = array_merge($this->buildReplacements(), [
             '{{title}}' => $title,
