@@ -167,7 +167,7 @@ class CoolhaxCrudGenerator extends CoolhaxGeneratorCommand
         $routeContent = File::get($routePath);
 
         // Define the route string to check and add
-        $routeString = "Route::resource('" . strtolower($route) . "', '" . $this->name . "Controller');";
+        $routeString = "Route::resource('" . strtolower($route) . "', App\Http\Controllers\\" . $this->name . "Controller::class);";
 
         // Check if the route string already exists in web.php
         if (strpos($routeContent, $routeString) === false) {

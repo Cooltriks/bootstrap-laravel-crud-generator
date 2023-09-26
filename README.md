@@ -17,6 +17,7 @@ This packege based on - (https://github.com/awais-vteams/laravel-crud-generator)
 - **Search Filter added**
 - **$serchable Property in Model**
 - Bootstrap new Design **col-md-6**
+- New Feature **Auto Route**
 
 
 
@@ -40,7 +41,13 @@ cd project-name
 composer require laravel/ui
 ```
 ```
-php artisan bootstrap ui --auth
+php artisan ui bootstrap --auth
+```
+```
+npm install
+```
+```
+npm run build
 ```
 ## Installation
 1 - Install
@@ -60,8 +67,10 @@ php artisan make:crud banks
 ```
 
 Add a route in `web.php`
+
+- Now auto Route Feature **Not Needed**
 ```
-Route::resource('banks', 'BankController');
+Route::resource('banks', App\Http\Controlles\BankController:class);
 ```
 Route name in plural slug case.
 
