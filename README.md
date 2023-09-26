@@ -9,12 +9,15 @@
 
 This Laravel Generator package provides and generate Controller, Model (with eloquent relations) and Views in **Bootstrap** for your development of your applications with single command.
 
+This packege based on - (https://github.com/awais-vteams/laravel-crud-generator)
+
 **What Is New**
 - **Relationship** with select in form and auto Relationship data pass in view 
 - **Select dropDown in form**
 - **Search Filter added**
 - **$serchable Property in Model**
 - Bootstrap new Design **col-md-6**
+
 
 
 - Will create **Model** with Eloquent relations
