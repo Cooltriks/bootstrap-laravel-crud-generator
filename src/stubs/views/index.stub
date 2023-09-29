@@ -11,59 +11,54 @@
                     </ol>
                 </nav>
             </div>
-
             <div class="col-12">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                {{modelTitle}}
-                                <a href="{{ route('{{modelRoute}}.create') }}" class="btn btn-primary float-end btn-sm"><i class="fa fa-solid fa-plus"></i> Create New</a>
+                <div class="card">
+                    <div class="card-header">
+                        {{modelTitle}}
+                        <a href="{{ route('{{modelRoute}}.create') }}" class="btn btn-primary float-end btn-sm"><i class="fa fa-solid fa-plus"></i> Create New</a>
+                    </div>
+                    <div class="card-body">
+                        <!-- Search and Filter Form -->
+                        <form action="{{ route('{{modelRoute}}.index') }}" method="GET" class="row g-3">
+                            <div class="col-md-4">
+                                <input type="text" name="search" class="form-control form-control-sm" placeholder="Search" value="{{ request('search') }}">
                             </div>
-                            <div class="card-body">
-                                <!-- Search and Filter Form -->
-                                <form action="{{ route('{{modelRoute}}.index') }}" method="GET" class="row g-3">
-                                    <div class="col-md-4">
-                                        <input type="text" name="search" class="form-control form-control-sm" placeholder="Search" value="{{ request('search') }}">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-primary btn-sm">Search</button>
-                                        <a href="{{ route('{{modelRoute}}.index') }}"><button type="button" class="btn btn-secondary btn-sm">Search</button></a>
-                                    </div>
-                                </form>
-                                
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-hover">
-                                        <thead class="thead">
-                                            <tr>
-                                                <th>No</th>
-                                                {{tableHeader}}
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (${{modelNamePluralLowerCase}} as ${{modelNameLowerCase}})
-                                                <tr>
-                                                    <td>{{ ++$i }}</td>
-                                                    {{tableBody}}
-                                                    <td>
-                                                        <form action="{{ route('{{modelRoute}}.destroy',${{modelNameLowerCase}}->id) }}" method="POST">
-                                                            <a class="btn btn-sm btn-primary " href="{{ route('{{modelRoute}}.show',${{modelNameLowerCase}}->id) }}"><i class="fa fa-fw fa-eye"></i> Show </a>
-                                                            <a class="btn btn-sm btn-success" href="{{ route('{{modelRoute}}.edit',${{modelNameLowerCase}}->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                                <a href="{{ route('{{modelRoute}}.index') }}"><button type="button" class="btn btn-secondary btn-sm">Search</button></a>
                             </div>
+                        </form>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>No</th>
+                                        {{tableHeader}}
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (${{modelNamePluralLowerCase}} as ${{modelNameLowerCase}})
+                                        <tr>
+                                            <td>{{ ++$i }}</td>
+                                            {{tableBody}}
+                                            <td>
+                                                <form action="{{ route('{{modelRoute}}.destroy',${{modelNameLowerCase}}->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('{{modelRoute}}.show',${{modelNameLowerCase}}->id) }}"><i class="fa fa-fw fa-eye"></i> Show </a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('{{modelRoute}}.edit',${{modelNameLowerCase}}->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
+                </div>     
                 {!! ${{modelNamePluralLowerCase}}->appends(request()->query())->links() !!}
             </div>
         </div>
